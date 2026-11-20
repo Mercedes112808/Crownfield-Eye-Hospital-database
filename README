@@ -1,0 +1,108 @@
+# Crownfield Eye Hospital Database Project
+
+**Module:** CPU4:103 Introduction to Database  
+**Database:** MySQL  
+**Project:** Crownfield Eye Hospital
+
+## 1. Project Overview
+
+This repository contains my individual SQL work for the Crownfield Eye Hospital database assessment.
+
+The fictional hospital currently uses paper records, Microsoft Word documents and Excel spreadsheets to manage patient and appointment information.
+
+The proposed relational database provides a structured way to store and retrieve information about patients, clinicians, specialties, clinics, appointments, diagnoses, prescriptions, medicines and follow-up plans.
+
+The project demonstrates database design, SQL queries, stored procedures, triggers, data protection and transaction management.
+
+## 2. Software Requirements
+
+The following software is recommended:
+
+- MySQL Server 8.0 or later.
+- MySQL Workbench.
+- GitHub account for storing the repository.
+
+MySQL 8.0.16 or later is recommended because the schema uses CHECK constraints.
+
+## 3. Repository Structure
+
+| Filename | Description |
+|---|---|
+| 01_schema.sql | Creates the database, tables, constraints and fictional sample data. |
+| 02_individual_queries.sql | Contains the first four individual SQL queries. |
+| 03_procedure_and_trigger.sql | Contains the stored procedure and trigger examples. |
+| 04_security.sql | Contains encryption, parameterised SQL and transaction examples. |
+| 05_ERD.png | Entity Relationship Diagram showing the database design. |
+| README.md | Project overview, setup instructions, execution order and assumptions. |
+
+## 4. Setup Instructions
+
+1. Install MySQL Server 8.0 or later.
+2. Install and open MySQL Workbench.
+3. Connect to the local MySQL Server.
+4. Open the file named 01_schema.sql.
+5. Execute the complete script. This creates the database, tables, constraints and fictional sample records.
+6. Open 02_individual_queries.sql and execute the four individual queries.
+7. Open 03_procedure_and_trigger.sql and execute the stored procedure and trigger definitions.
+8. Test the stored procedure using the example CALL statement.
+9. Test the trigger using valid and invalid follow-up dates.
+10. Open 04_security.sql to review the encryption, parameterised query and transaction examples.
+
+The database must be created before the other SQL files are executed.
+
+## 5. SQL Execution Order
+
+Execute the SQL files in this order:
+
+1. **01_schema.sql** – creates and populates the database.
+2. **02_individual_queries.sql** – executes the four individual queries.
+3. **03_procedure_and_trigger.sql** – creates the stored procedure and triggers.
+4. **04_security.sql** – demonstrates security and transaction management.
+
+The ER diagram is an image and does not need to be executed in MySQL.
+
+## 6. Database Assumptions
+
+The following assumptions were used in the proposed database design:
+
+- Each patient has a unique patient ID.
+- Each clinician has one primary specialty.
+- Each appointment belongs to one patient.
+- Each appointment is assigned to one clinician and one clinic.
+- An appointment can have zero or more diagnoses.
+- An appointment can have zero or more prescriptions.
+- A prescription can contain several medicines.
+- The Prescription Items table resolves the many-to-many relationship between prescriptions and medicines.
+- Each prescription item stores dose, route, frequency and duration.
+- The proposed design allows a maximum of one follow-up record per appointment. This is an assumption because the assessment brief does not specify the maximum number.
+- A follow-up due date must be later than the original appointment date.
+- All patient and clinical information in the sample database is fictional.
+
+The appointment identifiers are unique to satisfy the primary key requirement.
+
+## 7. Security and Data Protection
+
+The security file demonstrates encryption using MySQL AES functions and a parameterised SQL query.
+
+The encryption key in the example is a placeholder and must not be treated as a real security key. A production system should use secure key management and appropriate access controls.
+
+The transaction example demonstrates how a database update can be rolled back to preserve the original data.
+
+## 8. Testing and Limitations
+
+The SQL files are prepared for execution in MySQL Workbench.
+
+The queries, stored procedure and triggers should be tested before claiming successful execution. Screenshots should only be included after the relevant SQL has actually been run.
+
+If access to the university MySQL environment is unavailable, this limitation should be explained in the individual report. Untested code must not be presented as successfully executed.
+
+## 9. Individual Contribution
+
+My individual contribution focuses on:
+
+- Part A, Task A2: Conceptual data model and relationships.
+- Part B: Database constraints.
+- Part C: Six individual SQL features.
+- Part D, Task D2: Data protection and encryption.
+
+The repository contains my proposed individual SQL work and supporting database design.
